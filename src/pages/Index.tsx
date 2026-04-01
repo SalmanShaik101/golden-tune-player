@@ -1,16 +1,22 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import Sidebar from '@/components/Sidebar';
+import MainContent from '@/components/MainContent';
+import BottomPlayer from '@/components/BottomPlayer';
+import RightPanel from '@/components/RightPanel';
+import { PlayerProvider } from '@/context/PlayerContext';
 
-// IMPORTANT: Fully REPLACE this with your own code
-const PlaceholderIndex = () => {
-  // PLACEHOLDER: Replace this entire return statement with the user's app.
-  // The inline background color is intentionally not part of the design system.
+const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center" style={{ backgroundColor: '#fcfbf8' }}>
-      <img data-lovable-blank-page-placeholder="REMOVE_THIS" src="/placeholder.svg" alt="Your app will live here!" />
-    </div>
+    <PlayerProvider>
+      <div className="h-screen w-screen flex flex-col overflow-hidden">
+        <div className="flex flex-1 overflow-hidden">
+          <Sidebar />
+          <MainContent />
+          <RightPanel />
+        </div>
+        <BottomPlayer />
+      </div>
+    </PlayerProvider>
   );
 };
-
-const Index = PlaceholderIndex;
 
 export default Index;
